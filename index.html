@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Diamond Hair in Herne Hill, VIC — owner Tara delivers stunning, personalised hair styling with premium products. Book your appointment today.">
+<title>Diamond Hair | Herne Hill Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --blue-900: #0f2a4a;
+  --blue-700: #1a4175;
+  --blue-600: #1e5299;
+  --blue-500: #2563b0;
+  --blue-400: #4a8ad4;
+  --blue-100: #dce8f5;
+  --blue-50: #eef4fb;
+  --warm-grey-100: #f7f5f3;
+  --warm-grey-200: #ece8e4;
+  --warm-grey-300: #d6d0ca;
+  --warm-grey-500: #8a8078;
+  --warm-grey-700: #5c544d;
+  --white: #ffffff;
+  --gold: #d4a853;
+  --gold-light: #f5ecd8;
+  --text-dark: #1a1a2e;
+  --text-body: #3d3d50;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 2px 8px rgba(15,42,74,0.06);
+  --shadow-md: 0 6px 24px rgba(15,42,74,0.1);
+  --shadow-lg: 0 12px 40px rgba(15,42,74,0.14);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  background: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============ NAVBAR ============ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--warm-grey-200);
+  transition: box-shadow 0.3s;
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--blue-700);
+}
+
+.nav-logo .diamond-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--blue-500);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--blue-500);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  background: var(--blue-600);
+  color: var(--white) !important;
+  padding: 10px 22px !important;
+  border-radius: 50px;
+  font-size: 0.85rem !important;
+  transition: background 0.3s, transform 0.2s !important;
+}
+
+.nav-cta::after { display: none !important; }
+
+.nav-cta:hover {
+  background: var(--blue-700) !important;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 48px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--blue-700);
+  border-radius: 3px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-menu {
+  display: none;
+  background: var(--white);
+  border-bottom: 1px solid var(--warm-grey-200);
+  padding: 16px 24px 24px;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--warm-grey-100);
+  transition: color 0.3s;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu a:hover {
+  color: var(--blue-500);
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--blue-900) 0%, var(--blue-700) 40%, var(--blue-500) 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(212,168,83,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-pattern svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-diamond-1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: -50px;
+  right: -50px;
+  background: rgba(255,255,255,0.04);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.hero-diamond-2 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  bottom: 80px;
+  left: 5%;
+  background: rgba(212,168,83,0.08);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: float-slow 10s ease-in-out infinite reverse;
+}
+
+.hero-diamond-3 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 30%;
+  right: 15%;
+  background: rgba(255,255,255,0.06);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: 60px 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255,255,255,0.82);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 16px 32px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px;
+  min-width: 48px;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--blue-900);
+  border-color: var(--gold);
+}
+
+.btn-primary:hover {
+  background: #c49a45;
+  border-color: #c49a45;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212,168,83,0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.hero-deco-right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============ SECTION STYLES ============ */
+.section {
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 64px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--blue-400);
+  border-radius: 2px;
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--warm-grey-500);
+}
+
+/* ============ ABOUT ============ */
+.about {
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text-area .section-label {
+  justify-content: flex-start;
+}
+
+.about-text-area .section-label::before {
+  display: none;
+}
+
+.about-text-area h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.about-text-area p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-body);
+}
+
+.about-text-area .accent-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--blue-500));
+  border-radius: 4px;
+  margin: 24px 0;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--blue-50);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  text-align: center;
+  border: 1px solid var(--blue-100);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--blue-600);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--warm-grey-500);
+}
+
+/* ============ SERVICES ============ */
+.services {
+  background: var(--warm-grey-100);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 36px 30px;
+  border: 1px solid var(--warm-grey-200);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-500), var(--gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--blue-50), var(--blue-100));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: var(--blue-600);
+  font-size: 1.2rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--warm-grey-500);
+}
+
+/* ============ WHY CHOOSE US ============ */
+.why-us {
+  background: var(--white);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.why-card {
+  display: flex;
+  gap: 22px;
+  padding: 32px;
+  border-radius: var(--radius-md);
+  background: var(--white);
+  border: 1px solid var(--warm-grey-200);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-400);
+}
+
+.why-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-400));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+.why-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.why-card p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--warm-grey-500);
+}
+
+/* ============ PROCESS ============ */
+.process {
+  background: linear-gradient(170deg, var(--blue-900) 0%, var(--blue-700) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.process::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(212,168,83,0.06);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.process .section-label {
+  color: var(--gold);
+}
+
+.process .section-label::before,
+.process .section-label::after {
+  background: var(--gold);
+}
+
+.process .section-header h2 {
+  color: var(--white);
+}
+
+.process .section-header p {
+  color: rgba(255,255,255,0.65);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: calc(12.5% + 12px);
+  right: calc(12.5% + 12px);
+  height: 3px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 3px;
+}
+
+.timeline-step {
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--gold), #c49a45);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--blue-900);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(212,168,83,0.3);
+}
+
+.timeline-step h3 {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.timeline-step p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  padding: 0 8px;
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonials {
+  background: var(--warm-grey-100);
+  position: relative;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 36px 30px;
+  border: 1px solid var(--warm-grey-200);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-card .quote-mark {
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--blue-100);
+  position: absolute;
+  top: 16px;
+  left: 24px;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.testimonial-card blockquote {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-body);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.reviewer {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* ============ FAQ ============ */
+.faq {
+  background: var(--white);
+}
+
+.faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--warm-grey-200);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.faq-item.active {
+  border-color: var(--blue-400);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  text-align: left;
+  min-height: 48px;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: var(--blue-50);
+}
+
+.faq-question .icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--blue-600);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.faq-item.active .faq-question .icon {
+  transform: rotate(180deg);
+  background: var(--blue-600);
+  color: var(--white);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 28px 24px;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--warm-grey-500);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+}
+
+/* ============ HOURS & LOCATION ============ */
+.location {
+  background: var(--warm-grey-100);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.hours-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 40px 36px;
+  border: 1px solid var(--warm-grey-200);
+}
+
+.hours-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hours-card h3 i {
+  color: var(--blue-500);
+}
+
+.hours-table {
+  width: 100%;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--warm-grey-100);
+  font-size: 0.95rem;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-row .day {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.hours-row .time {
+  color: var(--warm-grey-500);
+}
+
+.hours-row.closed .time {
+  color: #c0392b;
+  font-weight: 600;
+}
+
+.map-container {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--warm-grey-200);
+  background: var(--warm-grey-200);
+  aspect-ratio: 4/3;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ============ CONTACT ============ */
+.contact {
+  background: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.contact-info > p {
+  font-size: 1rem;
+  color: var(--warm-grey-500);
+  margin-bottom: 32px;
+  line-height: 1.75;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.contact-detail-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--blue-50);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-600);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.btn-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--blue-600);
+  color: var(--white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 18px 40px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-height: 56px;
+  box-shadow: 0 4px 20px rgba(30,82,153,0.3);
+}
+
+.btn-call:hover {
+  background: var(--blue-700);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(30,82,153,0.4);
+}
+
+.contact-form {
+  background: var(--blue-50);
+  border-radius: var(--radius-md);
+  padding: 40px 36px;
+  border: 1px solid var(--blue-100);
+}
+
+.contact-form h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--warm-grey-200);
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--white);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  min-height: 48px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px rgba(37,99,176,0.1);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--blue-600);
+  color: var(--white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-height: 48px;
+}
+
+.form-submit:hover {
+  background: var(--blue-700);
+  transform: translateY(-1px);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--blue-900);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand .nav-logo {
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.footer-brand .nav-logo .diamond-icon {
+  background: linear-gradient(135deg, var(--gold), #c49a45);
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  max-width: 320px;
+}
+
+.footer h4 {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  display: block;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+}
+
+.footer-contact-item i {
+  color: var(--gold);
+  width: 16px;
+  text-align: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .timeline::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-content {
+    padding: 40px 0;
+  }
+
+  .hero-diamond-1,
+  .hero-diamond-3 {
+    display: none;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .stats-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .hero-deco-right {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    min-width: auto;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-header {
+    margin-bottom: 44px;
+  }
+
+  .why-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hours-card {
+    padding: 28px 22px;
+  }
+
+  .contact-form {
+    padding: 28px 22px;
+  }
+
+  .faq-question {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+
+  .faq-answer-inner {
+    padding: 0 20px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="diamond-icon"></div>
+      Diamond Hair
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">Book Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#process">How It Works</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#location">Hours & Location</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-pattern">
+    <svg viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+      </pattern>
+      <rect width="1440" height="800" fill="url(#grid)"/>
+    </svg>
+  </div>
+  <div class="hero-diamond-1"></div>
+  <div class="hero-diamond-2"></div>
+  <div class="hero-diamond-3"></div>
+
+  <div class="hero-deco-right">
+    <svg width="420" height="600" viewBox="0 0 420 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M210 50L370 300L210 550L50 300Z" stroke="rgba(212,168,83,0.12)" stroke-width="2" fill="none"/>
+      <path d="M210 100L340 300L210 500L80 300Z" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" fill="none"/>
+      <path d="M210 150L310 300L210 450L110 300Z" stroke="rgba(212,168,83,0.08)" stroke-width="1" fill="none"/>
+      <circle cx="210" cy="300" r="4" fill="rgba(212,168,83,0.3)"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-gem"></i>
+        Herne Hill's Favourite Salon
+      </div>
+      <h1>Walk Out Feeling <span>Fabulous</span>, Every Single Time</h1>
+      <p class="hero-sub">Diamond Hair is your local Herne Hill salon where owner Tara delivers the kind of results that keep clients coming back for over five years and counting.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-calendar-check"></i>
+          Book Your Appointment
+        </a>
+        <a href="tel:0432856090" class="btn btn-outline">
+          <i class="fas fa-phone"></i>
+          Call Tara Today
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text-area">
+        <div class="section-label">About Diamond Hair</div>
+        <h2>Where Great Hair Feels Personal</h2>
+        <div class="accent-line"></div>
+        <p>Diamond Hair is the creation of Tara, a genuinely talented hairdresser who's built something special right here in Herne Hill. Her clients describe feeling welcome and relaxed from the moment they walk through the door — and that's no accident. Tara takes the time to listen, uses only beautiful high-quality products, and has a real knack for making your hair turn out exactly how you pictured it. It's the kind of salon where one visit turns into five years of loyalty, and where you genuinely leave with a smile on your face.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Years of Loyal Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5★</div>
+          <div class="stat-label">Client Rating</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Satisfaction Focus</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What We Offer</div>
+      <h2>Services Tailored to You</h2>
+      <p>Every service at Diamond Hair is delivered with care, expertise, and premium products.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <h3>Cut &amp; Style</h3>
+        <p>A tailored cut and finish that suits your face shape, lifestyle, and personal style. Tara takes the time to consult with you so your hair turns out exactly how you want it — shiny, fresh, and easy to manage at home.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <h3>Colour &amp; Highlights</h3>
+        <p>From full colour transformations to subtle highlights, Tara uses premium products that deliver vibrant, long-lasting results. Your hair stays healthy and luminous well beyond your appointment.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <h3>Blowdry &amp; Finish</h3>
+        <p>Perfect for a special event or just because you deserve it. A professional blowdry using quality styling products that leave your hair looking salon-fresh and feeling incredible.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <h3>Hair Treatments</h3>
+        <p>Nourishing treatments designed to restore, strengthen, and add serious shine to your hair. Tara selects the right treatment for your hair type using the beautiful products Diamond Hair is known for.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <h3>Wedding &amp; Event Styling</h3>
+        <p>Your big day deserves hair that makes you feel extraordinary. Tara works closely with you in the lead-up to create a style that holds beautifully and photographs even better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section why-us" id="why-us">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Why Choose Us</div>
+      <h2>What Makes Diamond Hair Different</h2>
+      <p>It's the little things that make a big difference — and Tara gets every one of them right.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-scissors"></i></div>
+        <div>
+          <h3>Tara Knows Her Craft</h3>
+          <p>Owner-operated means you're always in the hands of someone who genuinely cares about your hair. Tara's clients describe her as professional, friendly, and truly talented — and they keep coming back to prove it.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-gem"></i></div>
+        <div>
+          <h3>Premium Products, Real Results</h3>
+          <p>Diamond Hair uses only high-quality, beautiful products that you can actually feel the difference with. The result is hair that stays shiny, healthy, and fabulous long after you leave the chair.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+        <div>
+          <h3>Your Hair, Your Way</h3>
+          <p>No cookie-cutter styles here. Tara listens carefully and delivers results that match exactly what you had in mind — every single visit.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-heart"></i></div>
+        <div>
+          <h3>A Salon That Feels Like Home</h3>
+          <p>Diamond Hair is a space where you can genuinely relax and enjoy the experience. Clients consistently mention feeling welcome and at ease from the moment they sit down.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">How It Works</div>
+      <h2>Your Journey to Fabulous Hair</h2>
+      <p>From your first call to walking out with a smile — here's how it works.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="step-number">1</div>
+        <h3>Get in Touch</h3>
+        <p>Give Tara a call or send a message to book a time that works for you.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-number">2</div>
+        <h3>Chat About Your Hair</h3>
+        <p>At your appointment, Tara will have a proper chat about what you're after and recommend the best approach for your hair type.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-number">3</div>
+        <h3>Sit Back &amp; Relax</h3>
+        <p>Enjoy a relaxed, unhurried salon experience while Tara works her magic with premium products and expert technique.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="step-number">4</div>
+        <h3>Leave Feeling Fabulous</h3>
+        <p>Walk out the door with hair that looks exactly how you wanted — shiny, fresh, and ready to turn heads around Geelong.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Testimonials</div>
+      <h2>Straight From the Chair</h2>
+      <p>Don't just take our word for it — hear from Tara's happy clients.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <blockquote>Amazing hairdresser, never disappoints, always leave with a smile on my face. Tara makes you feel welcome and relaxed every time. Wont go anywhere else, highly recommended</blockquote>
+        <div class="reviewer">Brandey De Haas</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <blockquote>I've had a fantastic experience at Diamond Hair! Tara, the owner, is absolutely amazing—professional, friendly, and truly talented at what she does. The service was top-notch from start to finish.</blockquote>
+        <div class="reviewer">Troy</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <blockquote>I've been a loyal Diamond Hair fan for over five years now, and they never miss! My hair always turns out exactly how I want it—shiny, fresh, and fabulous. They use the most beautiful products.</blockquote>
+        <div class="reviewer">Allie Hamann</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Got a question? We've got you covered.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do I need to book an appointment or can I walk in?</span>
+          <span class="icon"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Diamond Hair operates by appointment so Tara can give you her full, undivided attention. Give her a call on 0432 856 090 to find a time that suits you. She's flexible and will do her best to fit you in.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Where exactly is Diamond Hair located?</span>
+          <span class="icon"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">You'll find Diamond Hair at 17 Hilltop Street in Herne Hill, just a short drive from central Geelong. It's a quiet, welcoming spot in a residential area — nothing like the rush of a busy shopping centre salon.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>What products does Diamond Hair use?</span>
+          <span class="icon"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Tara is selective about the products she uses and only works with high-quality, professional-grade brands. Clients consistently rave about how shiny, healthy, and long-lasting their results are. If you have any sensitivities or preferences, just let Tara know.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is Diamond Hair suitable for all hair types?</span>
+          <span class="icon"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolutely. Tara has experience working with a wide range of hair types, textures, and styles. She takes the time to understand your specific hair needs during your consultation so the approach is always tailored to you.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS & LOCATION -->
+<section class="section location" id="location">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Visit Us</div>
+      <h2>Hours &amp; Location</h2>
+      <p>Find us in the heart of Herne Hill — just minutes from central Geelong.</p>
+    </div>
+    <div class="location-grid">
+      <div class="hours-card">
+        <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+        <div class="hours-table">
+          <div class="hours-row">
+            <span class="day">Monday</span>
+            <span class="time">10:00 AM – 5:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Tuesday</span>
+            <span class="time">10:00 AM – 5:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Wednesday</span>
+            <span class="time">10:00 AM – 8:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Thursday</span>
+            <span class="time">10:00 AM – 9:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Friday</span>
+            <span class="time">10:00 AM – 9:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Saturday</span>
+            <span class="time">8:30 AM – 4:00 PM</span>
+          </div>
+          <div class="hours-row closed">
+            <span class="day">Sunday</span>
+            <span class="time">Closed</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3100.5!2d144.3352!3d-38.1345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad4155c70a1b8e5%3A0x8b5f5b5c5c5c5c5c!2s17%20Hilltop%20St%2C%20Herne%20Hill%20VIC%203218!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Diamond Hair location on Google Maps"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Get in Touch</div>
+      <h2>Ready for Fabulous Hair?</h2>
+      <p>Reach out to Tara today and book your next appointment at Diamond Hair.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Let's Make It Happen</h3>
+        <p>The easiest way to book is to give Tara a call. She'd love to chat about what you're after and find a time that works for you.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <strong>Phone</strong><br>
+              <a href="tel:0432856090">0432 856 090</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
+            <div>
+              <strong>Address</strong><br>
+              17 Hilltop St, Herne Hill VIC 3218, Australia
+            </div>
+          </div>
+        </div>
+        <a href="tel:0432856090" class="btn-call">
+          <i class="fas fa-phone"></i>
+          Call Tara Today — 0432 856 090
+        </a>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form action="mailto:info@diamondhair.com.au" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us what you're after..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="diamond-icon"></div>
+          Diamond Hair
+        </div>
+        <p>Your local Herne Hill salon where owner Tara delivers stunning, personalised hair styling with premium products. Walk out feeling fabulous, every single time.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#why-us">Why Choose Us</a>
+          <a href="#process">How It Works</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact Details</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:0432856090">0432 856 090</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <span>17 Hilltop St, Herne Hill VIC 3218</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-clock"></i>
+          <span>Mon–Fri: 10am–9pm | Sat: 8:30am–4pm</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Diamond Hair. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', function() {
+  this.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+});
+
+// Close mobile menu when clicking a link
+mobileMenu.querySelectorAll('a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Navbar scroll shadow
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 20) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(function(button) {
+  button.addEventListener('click', function() {
+    const item = this.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close all items
+    document.querySelectorAll('.faq-item').forEach(function(faqItem) {
+      faqItem.classList.remove('active');
+      faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    
+    // Open clicked item if it wasn't already open
+    if (!isActive) {
+      item.classList.add('active');
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Smooth scroll for anchor links (fallback for browsers that don't support CSS scroll-behavior)
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    const target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      const navHeight = document.getElementById('navbar').offsetHeight;
+      const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      window.scrollTo({
+        top: targetPos,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
